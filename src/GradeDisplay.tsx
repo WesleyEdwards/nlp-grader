@@ -16,7 +16,7 @@ export const GradeDisplay = (props: { gradedData: GradedAnswer[] }) => {
       </div>
       <div className="line-item">
         <div>Percent Correct:</div>
-        <div>{(gradedCorrectly.length / gradedData.length) * 100} %</div>
+        <div>{(gradedCorrectly.length / gradedData.length) * 100}%</div>
       </div>
     </div>
   );

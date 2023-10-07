@@ -24,7 +24,7 @@ export function gradeTestData(bigrams: BigramInfo): GradedAnswer[] {
   return graded;
 }
 
-function gradeAnswer(answer: string, bigrams: BigramInfo): boolean {
+export function gradeAnswer(answer: string, bigrams: BigramInfo): boolean {
   const sentenceBigrams = parseSentence(answer);
   const rightCount = sentenceBigrams.reduce((acc, bigram) => {
     const exists = bigrams.correct.find((b) => b.bigram === bigram.bigram);
