@@ -7,7 +7,7 @@ import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export const UserInput = (props: { testTrainData?: BigramInfo }) => {
   const { testTrainData } = props;
-  const [answer, setAnswer] = useState<string>("");
+  const [answer, setAnswer] = useState("");
   const [grade, setGrade] = useState<boolean>();
 
   const handleGrade = () => {
@@ -47,7 +47,7 @@ export const UserInput = (props: { testTrainData?: BigramInfo }) => {
           onChange={(e) => setAnswer(e.target.value)}
           rows={3}
         />
-        <button disabled={!testTrainData} type="submit">
+        <button disabled={!testTrainData || answer === ""} type="submit">
           Submit
         </button>
         {grade !== undefined && (
