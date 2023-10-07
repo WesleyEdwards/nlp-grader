@@ -48,6 +48,9 @@ function App() {
       </div>
       <UserInput testTrainData={testTrainData} />
       <div className={showToast ? "toast open" : "toast"}>{showToast}</div>
+      <a href="https://github.com/WesleyEdwards/nlp-grader">
+        <img src="../assets/github-icon.png" width="100px" height="100px" />
+      </a>
     </>
   );
 }
