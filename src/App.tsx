@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { BigramInfo, getBigramInfo } from "./bigrams/bigrams";
 import { GradedAnswer, gradeTestData } from "./grade/grade";
-import { GradeDisplay } from "./GradeDisplay";
-import { UserInput } from "./UserInput";
+import { GradeDisplay } from "./components/GradeDisplay";
+import { UserInput } from "./components/UserInput";
 
 function App() {
   const [testTrainData, setTestTrainData] = useState<BigramInfo>();

@@ -1,7 +1,7 @@
 import "./UserInput.css";
 import { useState } from "react";
-import { gradeAnswer } from "./grade/grade";
-import { BigramInfo } from "./bigrams/bigrams";
+import { gradeAnswer } from "../grade/grade";
+import { BigramInfo } from "../bigrams/bigrams";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 

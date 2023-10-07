@@ -1,5 +1,5 @@
 import "./GradeDisplay.css";
-import { GradedAnswer } from "./grade/grade";
+import { GradedAnswer } from "../grade/grade";
 
 export const GradeDisplay = (props: { gradedData: GradedAnswer[] }) => {
   const { gradedData } = props;

@@ -20,24 +20,35 @@ export function gradeTestData(bigrams: BigramInfo): GradedAnswer[] {
     return acc;
   }, []);
 }
+type GradeValues = { count: number; weight: number };
 
 export function gradeAnswer(answer: string, bigrams: BigramInfo): boolean {
   const sentenceBigrams = parseSentence(answer);
-  const rightCount = sentenceBigrams.reduce((acc, bigram) => {
-    const exists = bigrams.correct.get(bigram);
-    if (exists) {
-      return acc + 1;
-    }
-    return acc;
-  }, 0);
+  const rightCount = sentenceBigrams.reduce<GradeValues>(
+    (acc, bigram) => {
+      const exists = bigrams.correct.get(bigram);
+      if (exists) {
+        acc.count += 1;
+        acc.weight += exists;
+      }
+      return acc;
+    },
+    { count: 0, weight: 0 }
+  );
 
-  const wrongCount = sentenceBigrams.reduce((acc, bigram) => {
-    const exists = bigrams.incorrect.get(bigram);
-    if (exists) {
-      return acc + 1;
-    }
-    return acc;
-  }, 0);
+  const wrongCount = sentenceBigrams.reduce<GradeValues>(
+    (acc, bigram) => {
+      const exists = bigrams.incorrect.get(bigram);
+      if (exists) {
+        acc.count += 1;
+        acc.weight += exists;
+      }
+      return acc;
+    },
+    { count: 0, weight: 0 }
+  );
 
-  return rightCount >= wrongCount;
+  if (rightCount.count < 5) return false;
+
+  return rightCount.count >= wrongCount.count;
 }
