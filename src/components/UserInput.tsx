@@ -52,7 +52,7 @@ export const UserInput = (props: { testTrainData?: BigramInfo }) => {
         </button>
         {grade !== undefined && (
           <div>
-            <div>Grade: {grade ? "Correct" : "Incorrect"}</div>
+            <div>{grade ? "Correct" : "Incorrect"}</div>
           </div>
         )}
       </div>
