@@ -1,5 +1,8 @@
-# To run
+# Hosting
+This is being hosted at https://wesleyedwards.github.io/nlp-grader/
 
+
+# To run
 clone the project and run the following commands
 
 ```
